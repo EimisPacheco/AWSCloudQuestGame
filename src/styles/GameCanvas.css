@@ -1,0 +1,545 @@
+.gameCanvas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 0px;
+  background-color: #0a192f;
+  font-family: 'Orbitron', sans-serif;
+  background-image: linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.gameCanvas-canvas-wrapper {
+  border: 2px solid #00ffff;
+  border-radius: 10px;
+  background: rgba(10, 25, 47, 0.95);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  width: 1200px;
+  height: 800px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: none; stroke: cyan; stroke-width: 2;"><circle cx="12" cy="12" r="8"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/></svg>') 12 12, crosshair;
+}
+
+.gameCanvas-canvas {
+  width: 1200px;
+  height: 800px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: none; stroke: cyan; stroke-width: 2;"><circle cx="12" cy="12" r="8"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/></svg>') 12 12, crosshair;
+  background-color: #0a192f;
+}
+
+.gameCanvas-game-canvas {
+  border: none;
+  background-color: rgba(10, 25, 47, 0.8);
+}
+
+.gameCanvas-instruction-panel {
+  background-color: rgba(10, 25, 47, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  height: auto;
+  border: 2px solid #00ffff;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  padding: 15px; 
+  flex-direction: column;
+  display: flex;
+}
+
+.gameCanvas-score-display {
+  font-size: 24px;
+  color: #00ffff;
+  text-align: center;
+  padding: 15px;
+  background-color: rgba(0, 255, 255, 0.1);
+  border-radius: 8px;
+  border: 2px solid #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.gameCanvas-mission-container {
+  margin-top: auto;
+}
+
+.gameCanvas-mission-title {
+  color: #00ffff;
+  text-align: center;
+  font-size: 1.4em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.gameCanvas-mission-text {
+  background-color: rgba(0, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 1.3em;
+  line-height: 1.4;
+  border: 2px solid #00ffff;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+  letter-spacing: 0.5px;
+}
+
+.gameCanvas-score-explanation {
+  background-color: #34495e;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  font-size: 0.9em;
+  border: 1px solid #3498db;
+}
+
+.gameCanvas-score-explanation h4 {
+  color: #00ffff;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.gameCanvas-score-explanation ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #ecf0f1;
+  font-family: Arial, sans-serif;
+  font-size: 1.4em;
+  line-height: 1.6;
+  list-style: none;
+}
+
+.gameCanvas-score-explanation li {
+  margin: 8px 0;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.gameCanvas-sound-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px;
+  transition: transform 0.2s;
+}
+
+.gameCanvas-sound-toggle:hover {
+  transform: scale(1.1);
+}
+
+.gameCanvas-sound-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #3498db;
+  border-radius: 4px;
+}
+
+.gameCanvas-timer-display {
+  color: #00ffff;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 10px 0;
+  padding: 5px;
+  background-color: rgba(10, 25, 47, 0.9);
+  border-radius: 4px;
+  border: 1px solid #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.gameCanvas-timer-display::before {
+  content: 'TIME: ';
+  color: #00ffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.gameCanvas-high-scores {
+  background-color: #34495e;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: 1px solid #3498db;
+}
+
+.gameCanvas-high-scores h4 {
+  color: #00ffff;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.gameCanvas-high-scores ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: Arial, sans-serif;
+  font-size: 1.4em;
+}
+
+.gameCanvas-high-scores li {
+  color: #ecf0f1;
+  padding: 5px 0;
+  text-align: center;
+  border-bottom: 1px solid #3498db33;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.gameCanvas-game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(10, 25, 47, 0.95);
+  padding: 30px 40px;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  min-width: 300px;
+  backdrop-filter: blur(10px);
+}
+
+.gameCanvas-game-over h3 {
+  color: #00ffff;
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.gameCanvas-game-over button {
+  background-color: rgba(0, 255, 255, 0.1);
+  color: #00ffff;
+  border: 2px solid #00ffff;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.gameCanvas-game-over button:hover {
+  background-color: rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.gameCanvas-game-over button:active {
+  transform: translateY(1px);
+}
+
+.gameCanvas-player-info {
+  margin-bottom: 15px;
+}
+
+.gameCanvas-player-name {
+  color: #00ffff;
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: rgba(10, 25, 47, 0.9);
+  border-radius: 4px;
+  border: 1px solid #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.gameCanvas-player-info .gameCanvas-player-name::before {
+  content: 'PLAYER: ';
+  color: #00ffff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.gameCanvas-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.gameCanvas-modal {
+  background: linear-gradient(145deg, #1a2a3a, #2a3a4a);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  border: 2px solid #00ffff;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.gameCanvas-modal h2 {
+  color: #00ffff;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.gameCanvas-modal p {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.gameCanvas-name-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.gameCanvas-name-input:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.gameCanvas-start-button {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gameCanvas-start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+}
+
+.gameCanvas-name-error {
+  color: #ff6b6b;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.gameCanvas-rocket-selection-modal {
+  background-color: rgba(10, 25, 47, 0.95);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #00ffff;
+  width: 1000px;
+  max-width: 1000px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.gameCanvas-rocket-selection-modal h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.gameCanvas-rocket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.gameCanvas-rocket-option {
+  background-color: rgba(0, 255, 255, 0.1);
+  border: 2px solid #00ffff;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.gameCanvas-rocket-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  background-color: rgba(0, 255, 255, 0.2);
+}
+
+.gameCanvas-rocket-option.selected {
+  background-color: rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+.gameCanvas-rocket-option img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.gameCanvas-rocket-option:hover img {
+  transform: scale(1.1);
+}
+
+.gameCanvas-rocket-option p {
+  color: #fff;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.gameCanvas-cheerleader-container {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  animation: gameCanvas-slideIn 0.3s ease-out;
+}
+
+.gameCanvas-cheerleader-character {
+  width: 100px;
+  height: 100px;
+  animation: gameCanvas-bounce 1s infinite;
+}
+
+.gameCanvas-cheerleader-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gameCanvas-cheer-message {
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 15px;
+  max-width: 200px;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  animation: gameCanvas-fadeIn 0.3s ease-out;
+}
+
+.gameCanvas-cheer-message::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: #fff transparent transparent;
+}
+
+@keyframes gameCanvas-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gameCanvas-slideIn {
+  from { transform: translateX(-100px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes gameCanvas-fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+} 
+
+.gameCanvas-game-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  color: #00ffff;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.1);
+  animation: gameCanvas-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes gameCanvas-glow {
+  from {
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff;
+  }
+  to {
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+  }
+}
+
+.gameCanvas-game-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  width: 100%;
+}
+
+.gameCanvas-score-explanation ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.gameCanvas-score-explanation li {
+  margin-bottom: 5px;
+}
+
+.gameCanvas-high-scores ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.gameCanvas-high-scores li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.gameCanvas-high-score-name {
+  text-align: left;
+  margin-right: 10px;
+}

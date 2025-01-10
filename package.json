@@ -1,0 +1,42 @@
+{
+  "name": "cloud-architecture-game",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/utilities": "^3.2.2",
+    "dagre": "^0.8.5",
+    "fast-levenshtein": "^3.0.0",
+    "openai": "^4.78.1",
+    "react": "^18.2.0",
+    "react-confetti": "^6.2.2",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.1.3",
+    "react-scripts": "5.0.1",
+    "react-use": "^17.6.0",
+    "reactflow": "^11.11.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
+}

@@ -1,0 +1,205 @@
+.aws-game-home {
+  width: 100%;
+  height: 100vh;
+  background-color: #0a192f;
+}
+
+.aws-game-home .game-home-wrapper-h {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: #0a192f;
+}
+
+.aws-game-home .game-home-container-h {
+  min-height: 100vh;
+  background-color: #0a192f;
+  background-image: 
+    linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.aws-game-home .game-title-h {
+  color: #00ffff;
+  font-size: 4.5rem;
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 
+    0 0 10px rgba(0, 255, 255, 0.7),
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 0 30px rgba(0, 255, 255, 0.3);
+  animation: neon-glow-home 1.5s ease-in-out infinite alternate;
+}
+
+.aws-game-home .game-subtitle-h {
+  color: #4FD1C5;
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.aws-game-home .games-grid-h {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.aws-game-home .game-card-h {
+  background: rgba(13, 25, 35, 0.95);
+  border: 2px solid #00ffff;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.aws-game-home .game-link-h {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.aws-game-home .game-icon-h {
+  font-size: 48px;
+  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 255, 0.1);
+  border-radius: 50%;
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  margin: 0 auto 20px;
+}
+
+.aws-game-home .game-card-h h2 {
+  color: #00ffff;
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.aws-game-home .game-card-h h3 {
+  color: #4FD1C5;
+  font-size: 18px;
+  margin: 0 0 15px 0;
+}
+
+.aws-game-home .game-card-h p {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.aws-game-home .game-card-h:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  border-color: #4FD1C5;
+}
+
+.aws-game-home .game-stats-section-h {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.aws-game-home .game-stats-section-h h3 {
+  color: #00ffff;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.aws-game-home .stats-grid-h {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aws-game-home .stat-card-h {
+  background: rgba(10, 25, 47, 0.95);
+  border: 2px solid #4FD1C5;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.aws-game-home .stat-number-h {
+  display: block;
+  font-size: 2.5rem;
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+
+.aws-game-home .stat-label-h {
+  color: #4FD1C5;
+  font-size: 1.1rem;
+}
+
+@keyframes neon-glow-home {
+  from {
+    text-shadow: 
+      0 0 10px rgba(0, 255, 255, 0.7),
+      0 0 20px rgba(0, 255, 255, 0.5),
+      0 0 30px rgba(0, 255, 255, 0.3);
+  }
+  to {
+    text-shadow: 
+      0 0 15px rgba(0, 255, 255, 0.9),
+      0 0 25px rgba(0, 255, 255, 0.7),
+      0 0 35px rgba(0, 255, 255, 0.5);
+  }
+}
+
+@media (max-width: 768px) {
+  .aws-game-home .game-title-h {
+    font-size: 3rem;
+  }
+  
+  .aws-game-home .game-subtitle-h {
+    font-size: 1.2rem;
+  }
+  
+  .aws-game-home .games-grid-h {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+}
+
+.hover-glow {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover-glow:hover {
+  animation: pulse-glow 1s infinite;
+  cursor: pointer;
+}

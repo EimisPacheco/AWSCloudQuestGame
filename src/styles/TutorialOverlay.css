@@ -1,0 +1,38 @@
+.tutorial-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.tutorial-content {
+  background: #1a2634;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 500px;
+  text-align: center;
+  color: white;
+  border: 2px solid #4FD1C5;
+}
+
+.tutorial-button {
+  background: #4FD1C5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.tutorial-button:hover {
+  background: #3BA89F;
+  transform: scale(1.05);
+} 

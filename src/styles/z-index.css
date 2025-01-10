@@ -1,0 +1,47 @@
+:root {
+    --z-index-base: 1;
+    --z-index-game-content: 100;
+    --z-index-feedback-message: 200;
+    --z-index-feedback-modal: 300;
+    --z-index-tutorial: 400;
+    --z-index-overlay: 500;
+    --z-index-effects: 1000;
+}
+
+/* Router-level wrapper */
+.router-wrapper {
+    position: relative;
+    z-index: var(--z-index-base);
+}
+
+/* Game-specific elements */
+.game-content {
+    position: relative;
+    z-index: var(--z-index-game-content);
+}
+
+.effects-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: var(--z-index-effects);
+}
+
+.feedback-message {
+    z-index: var(--z-index-feedback-message);
+}
+
+.feedback-modal {
+    z-index: var(--z-index-feedback-modal);
+}
+
+.tutorial-overlay {
+    z-index: var(--z-index-tutorial);
+}
+
+.overlay {
+    z-index: var(--z-index-overlay);
+}

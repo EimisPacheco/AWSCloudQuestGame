@@ -1,0 +1,144 @@
+@keyframes fadeOut {
+  from {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+}
+
+.sub-optimal-feedback {
+  margin-top: 15px;
+  padding: 10px;
+  border: 2px solid #FFD700;
+  border-radius: 5px;
+}
+
+.optimal-bonus {
+  color: #FFD700;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 10px;
+  display: block;
+}
+
+.sad-face-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-index-overlay);
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sad-face-overlay span {
+  font-size: 100px;
+  animation: sadFaceAnimation 4s ease-in-out forwards;
+  display: block;
+  opacity: 0.5;
+}
+
+@keyframes sadFaceAnimation {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.5); 
+  }
+  50% { 
+    opacity: 0.5; 
+    transform: scale(1.2); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(1.5); 
+  }
+}
+
+.feedback-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-index-overlay);
+  pointer-events: none;
+}
+
+.feedback-modal {
+  position: relative;
+  z-index: var(--z-index-feedback);
+  background: rgba(13, 25, 35, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 20px 0;
+  border: 4px solid transparent;
+}
+
+.feedback-modal.correct.optimal {
+  border-color: #4CAF50;  /* Green for optimal */
+}
+
+.feedback-modal.incorrect {
+  border-color: #FF5656;  /* Red for incorrect */
+}
+
+.feedback-modal.correct:not(.optimal) {
+  border-color: #FFD700;  /* Yellow for correct but not optimal */
+}
+
+/* Add this to ensure the correct answer text is always green */
+.correct-answer-section span {
+  color: #4CAF50 !important;  /* Always green for correct answer text */
+}
+
+.new-architecture-button img {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.progress img {
+  margin: 0 auto;
+  display: block;
+}
+
+.game-status {
+  text-align: center;
+  margin: 20px 0;
+} 
+
+.confetti-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.game-wrapper {
+  position: relative;
+  min-height: 100vh;
+}
+
+.game-container {
+  position: relative;
+  z-index: 1;
+}
+
+.game-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #0d1923;
+  z-index: 2;
+}
