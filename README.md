@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+## **Inspiration**  
+I wanted to create a fun and engaging way for people to learn AWS concepts by making the process interactive and entertaining. I combined my love for learning games with my passion for AWS architecture to create a game that helps players practice real-world cloud skills in a playful way.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **What it does**  
+*Launch & Link - CloudQuest Game* has two exciting modes:  
+1. **Rocket Blast Mode** – This is a browser-based shooting game where players shoot AWS service icons. The game aims to help players learn AWS services by categorizing them and making it interactive.
 
-## Available Scripts
+Key Components:
+- Canvas-based game rendering
+- Player controls (mouse movement and clicking)
+- Scoring system
+- Sound effects
+- High score tracking
 
-In the project directory, you can run:
 
-### `npm start`
+This implementation:
+• Gets all icons for the current category
+• Gets all icons from other categories
+• Randomly selects 4 unique icons from the current category (or all if fewer than 4 available)
+• Randomly selects 6 unique icons from other categories
+• Uses a helper function to ensure we get unique random selections
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This correctly checks if the hit icon belongs to the current target category. If it does:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+• Player gets points (5 + height bonus)
 
-### `npm test`
+• Shows positive feedback
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+• Plays correct sound
 
-### `npm run build`
+• Creates green explosion
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If it doesn't:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+• Player loses 5 points
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+• Shows negative feedback
 
-### `npm run eject`
+• Plays incorrect sound
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Multiple game states (name entry, rocket selection, gameplay, game over)
+2. **Architecture Builder Mode** – Players complete cloud architecture diagrams by filling in the missing AWS services from four possible options.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This game helps users understand AWS services, their use cases, and how they fit into real-world cloud architectures.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+They player can select **Begginer, Intermediate or Advance** complexity Level.
 
-## Learn More
+These Architectures are generated my the AI model.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## **How we built it**  
+I built the game using:  
+- **Amazon S3** to host game assets and media files, like game sounds, Amazon Icons, Rockets Type, ect..  
+- **AWS Lambda** functions to handle the backend logic and process user actions.  This call the AI model for the Web Services Architecture generation
+- **Amazon API Gateway** to manage HTTP requests between the client and backend.  
+- **Q Developer and Amazon Q** for making the game logic more dynamic and incorporating intelligent responses. I am primarily a Python developer and not well-versed in React or JavaScript. That's why Q Developer was instrumental in making this game possible. It helped me better understand the language and accelerate my learning. Despite not being a React/JavaScript developer, I was able to develop this app in record time, thanks to Q Developer.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+I designed the architecture to be serverless for scalability and cost efficiency.
 
-### Code Splitting
+## **Challenges we ran into**  
+One challenge was ensuring that the latency between API Gateway and Lambda functions remained low to provide a smooth experience during rapid gameplay. Another challenge was balancing the difficulty levels to keep the game fun for beginners while still being challenging for more advanced users.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## **Accomplishments that we're proud of**  
+I’m proud of successfully integrating multiple AWS services to create a seamless and interactive experience. It was rewarding to see the architecture builder mode working well with the intelligent service options provided through Amazon Q. The serverless design has also made the solution cost-effective and highly scalable.
 
-### Analyzing the Bundle Size
+## **What we learned**  
+I learned a lot about optimizing API Gateway and Lambda interactions for speed and reliability. Additionally, working with Q Developer taught me how to dynamically tailor the service options presented to users in a way that makes the gameplay feel more personalized.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## **What's next for Launch & Link - CloudQuest Game**  
+Next, I plan to:  
+- Incorporate leaderboard and scoring systems to boost player engagement.  
+- Improve the interface and add more animations to make the game even more interactive and visually appealing.  
+- Explore additional AWS integrations, like **Amazon DynamoDB** for tracking player progress.
+- Take advantage of AWS Amplify capabilities for full-stack web.
