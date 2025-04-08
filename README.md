@@ -47,8 +47,10 @@ If it doesn't:
 Multiple game states (name entry, rocket selection, gameplay, game over)
 
 ![Alt text](https://hackthon-backend-files-ep-2024.s3.us-east-1.amazonaws.com/games/rocket-selection-window.png)
+
 ![Alt text](https://hackthon-backend-files-ep-2024.s3.us-east-1.amazonaws.com/games/aws-cloud-shooter.png)
-![Alt text](https://hackthon-backend-files-ep-2024.s3.us-east-1.amazonaws.com/games/aws-cloud-shooter3.png)
+
+![Alt text](https://hackthon-backend-files-ep-2024.s3.us-east-1.amazonaws.com/games/aws-cloud-shooter2.png)
 
 
 **Architecture Builder Mode** – Players complete cloud architecture diagrams by filling in the missing AWS services from four possible options.
