@@ -1,6 +1,8 @@
 # Inspiration
 I wanted to create a fun and engaging way for people to learn AWS concepts by making the process interactive and entertaining. I combined my love for learning games with my passion for AWS architecture to create a game that helps players practice real-world cloud skills in a playful way.
 
+See video https://vimeo.com/manage/videos/1046949264
+
 # What it does
 Azure CloudQuest Game has two exciting modes:
 
