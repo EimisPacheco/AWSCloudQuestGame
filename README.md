@@ -46,12 +46,21 @@ If it doesn't:
 
 Multiple game states (name entry, rocket selection, gameplay, game over)
 
+![Alt text](https://hackthon-backend-files-ep-2024.s3.us-east-1.amazonaws.com/games/rocket-selection-window.png)
+![Alt text](https://hackthon-backend-files-ep-2024.s3.us-east-1.amazonaws.com/games/aws-cloud-shooter.png)
+![Alt text](https://hackthon-backend-files-ep-2024.s3.us-east-1.amazonaws.com/games/aws-cloud-shooter3.png)
+
+
 **Architecture Builder Mode** – Players complete cloud architecture diagrams by filling in the missing AWS services from four possible options.
 This game helps users understand AWS services, their use cases, and how they fit into real-world cloud architectures.
 
 They player can select Begginer, Intermediate or Advance complexity Level.
 
 These Architectures are generated my the AI model.
+
+![Alt text](https://hackthon-backend-files-ep-2024.s3.us-east-1.amazonaws.com/games/AWS-architecture-game1.png)
+![Alt text](https://hackthon-backend-files-ep-2024.s3.us-east-1.amazonaws.com/games/AWS-architecture-game3.png)
+
 
 # How I built it
 I built the game using:
