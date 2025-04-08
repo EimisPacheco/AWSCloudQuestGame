@@ -54,10 +54,11 @@ These Architectures are generated my the AI model.
 # How I built it
 I built the game using:
 
-Amazon S3 to host game assets and media files, like game sounds, Amazon Icons, Rockets Type, ect..
-AWS Lambda functions to handle the backend logic and process user actions. This call the AI model for the Web Services Architecture generation
-Amazon API Gateway to manage HTTP requests between the client and backend.
-Q Developer and Amazon Q for making the game logic more dynamic and incorporating intelligent responses. I am primarily a Python developer and not well-versed in React or JavaScript. That's why Q Developer was instrumental in making this game possible. It helped me better understand the language and accelerate my learning. Despite not being a React/JavaScript developer, I was able to develop this app in record time, thanks to Q Developer.
+- **Amazon S3** to host game assets and media files, like game sounds, Amazon Icons, Rockets Type, ect..
+- **AWS Lambda functions**  to handle the backend logic and process user actions. This call the AI model for the Web Services Architecture generation
+- **Amazon API Gateway** to manage HTTP requests between the client and backend.
+- **Q Developer and Amazon Q**  for making the game logic more dynamic and incorporating intelligent responses. I am primarily a Python developer and not well-versed in React or JavaScript. That's why Q Developer was instrumental in making this game possible. It helped me better understand the language and accelerate my learning. Despite not being a React/JavaScript developer, I was able to develop this app in record time, thanks to Q Developer.
+  
 I designed the architecture to be serverless for scalability and cost efficiency.
 
 Challenges I ran into
